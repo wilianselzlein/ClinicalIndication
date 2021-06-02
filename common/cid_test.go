@@ -1,18 +1,17 @@
-package main
+package common
 
 import (
- 	cid "ClinicalIndication/common"
 	"testing"
 )
 
 func TestCidSimple(t *testing.T) {
-	res, err := cid.ExtractCid("123 c 123 123")
+	res, err := ExtractCid("123 c 123 123")
 	want := "c123"
 	if res != want || err != nil  {
 		t.Errorf("ExtractCidSimple = %s, %v; want %s", res, err, want)
 	}
 
-	res, err = cid.ExtractCid("123 c123 123")
+	res, err = ExtractCid("123 c123 123")
 	if res != want || err != nil  {
 		t.Errorf("ExtractCidSimple = %s, %v; want %s", res, err, want)
 	}
@@ -20,7 +19,7 @@ func TestCidSimple(t *testing.T) {
 
 func testRange(cids *map[string]string, t *testing.T) {
 	for k, v := range *cids {
-		res, err := cid.ExtractCid(k)
+		res, err := ExtractCid(k)
 		if res != v || err != nil  {
 			t.Errorf("ExtractCid(%s) != %s, %v; want %s", k, res, err, v)
 		}
