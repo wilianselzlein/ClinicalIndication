@@ -54,11 +54,12 @@ func main() {
 			}
 			wordssub[indications[idx].Subgroup][word] += 1
 
-			if _, ok := wordscid[indications[idx].CID]; !ok {
-				wordscid[indications[idx].CID] = make(map[string]int)
+			for _, cid := range indications[idx].CID {
+				if _, ok := wordscid[cid]; !ok {
+					wordscid[cid] = make(map[string]int)
+				}
+				wordscid[cid][word] += 1
 			}
-			wordscid[indications[idx].CID][word] += 1
-			
 		}
 
 	}

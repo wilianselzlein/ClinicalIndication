@@ -1,7 +1,8 @@
 package cleanupText
 
 import (
-	"strings"
+	//"strings"
+	"regexp"
 )
 
 var abbreviations = map[string]string{
@@ -9,7 +10,6 @@ var abbreviations = map[string]string{
 	"esq": "esquerdo", 
 	"od": "olho direito", 
 	"dir": "direito",
-	" ": "", 
 }
 
 type AbbreviationWrapper struct {
@@ -19,7 +19,16 @@ type AbbreviationWrapper struct {
 func (t *AbbreviationWrapper) Render() string {
 	var result string = t.Text.Render()
 	for k, v := range abbreviations {
-		result = strings.Replace(result, " " + k + " ", " " + v + " ", -1)
+		v = " " + v + " "
+		var re = regexp.MustCompile(" " + k + " ") 
+		result = re.ReplaceAllString(result, v)
+		re = regexp.MustCompile("^" + k + " ")
+		result = re.ReplaceAllString(result, v)
+		re = regexp.MustCompile("^" + k + "$")
+		result = re.ReplaceAllString(result, v)
+		re = regexp.MustCompile(" " + k + "$")
+		result = re.ReplaceAllString(result, v)
 	}
+
 	return result
 }

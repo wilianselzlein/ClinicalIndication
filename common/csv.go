@@ -11,7 +11,7 @@ type Indication struct {
 	Group		string  `csv:"grupo"`
 	Subgroup	string  `csv:"subgrupo"`
 	Indication 	string	`csv:"ds_indicacao_clinica"`
-	CID			string	`csv:"ds_diagnostico_principal"`
+	CID			[]string	`csv:"-"`
 	Formated	string	`csv:"-"`
 }
 

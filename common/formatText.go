@@ -5,14 +5,16 @@ import (
 )
 
 func FormatText(s string) string {
-	wrapperText := &decorator.TextWrapper{Text: s}
-	lowerText := &decorator.LowerWrapper{Text: wrapperText}
-	normalizeText := &decorator.NormalizeWrapper{Text: lowerText}
-	punctuationText := &decorator.PunctuationWrapper{Text: normalizeText}
-	separatorText := &decorator.SeparatorWrapper{Text: punctuationText}
-	abbreviationsText := &decorator.AbbreviationWrapper{Text: separatorText}
-	stopWordsText := &decorator.StopWordsWrapper{Text: abbreviationsText}
-	//smallText := &decorator.SmallWrapper{Text: stopWordsText}
-	fieldsText := &decorator.FieldsWrapper{Text: stopWordsText}
-	return fieldsText.Render()
+	var wrapper decorator.WrittenText
+
+	wrapper = &decorator.TextWrapper{Text: s}
+	wrapper = &decorator.LowerWrapper{Text: wrapper}
+	wrapper = &decorator.NormalizeWrapper{Text: wrapper}
+	wrapper = &decorator.PunctuationWrapper{Text: wrapper}
+	wrapper = &decorator.SeparatorWrapper{Text: wrapper}
+	wrapper = &decorator.AbbreviationWrapper{Text: wrapper}
+	wrapper = &decorator.StopWordsWrapper{Text: wrapper}
+	//wrapper = &decorator.SmallWrapper{Text: wrapper}
+	wrapper = &decorator.FieldsWrapper{Text: wrapper}
+	return wrapper.Render()
 }

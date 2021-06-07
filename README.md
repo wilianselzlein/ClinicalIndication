@@ -40,7 +40,7 @@
     <br />
     <a href="https://github.com/wilianselzlein/ClinicalIndication/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/ClinicalIndication/issues">Request Feature</a>
+    <a href="https://github.com/wilianselzlein/ClinicalIndication/issues">Request Feature</a>
   </p>
 </p>
 
@@ -149,7 +149,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/flonopx) - wilianselzlein@gmail.com
+Your Name - [@flonopx](https://twitter.com/flonopx) - wilianselzlein@gmail.com
 
 Project Link: [https://github.com/wilianselzlein/ClinicalIndication](https://github.com/wilianselzlein/ClinicalIndication)
 
@@ -175,6 +175,6 @@ Project Link: [https://github.com/wilianselzlein/ClinicalIndication](https://git
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
 [license-url]: https://github.com/wilianselzlein/ClinicalIndication/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[linkedin-url]: https://linkedin.com/in/wilianselzlein
 [product-screenshot]: https://raw.githubusercontent.com/wilianselzlein/Best-README-Template/master/images/screenshot.png
 

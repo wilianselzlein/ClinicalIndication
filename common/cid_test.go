@@ -7,12 +7,12 @@ import (
 func TestCidSimple(t *testing.T) {
 	res, err := ExtractCid("123 c 123 123")
 	want := "c123"
-	if res != want || err != nil  {
+	if res[0] != want || err != nil  {
 		t.Errorf("ExtractCidSimple = %s, %v; want %s", res, err, want)
 	}
 
 	res, err = ExtractCid("123 c123 123")
-	if res != want || err != nil  {
+	if res[0] != want || err != nil  {
 		t.Errorf("ExtractCidSimple = %s, %v; want %s", res, err, want)
 	}
 }
@@ -20,7 +20,7 @@ func TestCidSimple(t *testing.T) {
 func testRange(cids *map[string]string, t *testing.T) {
 	for k, v := range *cids {
 		res, err := ExtractCid(k)
-		if res != v || err != nil  {
+		if (len(res) > 0 && res[0] != v) || err != nil  {
 			t.Errorf("ExtractCid(%s) != %s, %v; want %s", k, res, err, v)
 		}
 	}
