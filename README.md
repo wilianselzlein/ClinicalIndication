@@ -94,6 +94,7 @@ go get -u github.com/gocarina/gocsv
 go get -u github.com/bbalet/stopwords
 go get -u github.com/tealeg/xlsx
 go get -u github.com/asaskevich/govalidator
+go get -u github.com/TwinProduction/go-color
 ```
 
 

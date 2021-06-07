@@ -6,6 +6,8 @@ import (
 	common "ClinicalIndication/common"
 	valid "github.com/asaskevich/govalidator"
 	"github.com/tealeg/xlsx"
+	"github.com/TwinProduction/go-color"
+	"strconv"
 )
 
 var file *xlsx.File
@@ -14,6 +16,7 @@ var sh 	*xlsx.Sheet
 var fieldsToExtract = []string{"Cod", "Group", "Subgroup", "CID"}
 
 func main() {
+	println(color.Blue + "Start" + color.Reset)
 	indications := common.ReadCsv()
 
 	words := map[string]int{}
@@ -66,6 +69,7 @@ func main() {
 
 	//fmt.Println(wordscod[30101069])
 	//fmt.Println(wordscid["s611"])
+	println(color.Yellow + "CIDs: " + strconv.Itoa(len(wordscid)) + color.Reset)
 
 	file = xlsx.NewFile()
 
@@ -80,4 +84,5 @@ func main() {
 	if err != nil {
 		fmt.Printf(err.Error())
 	}
+	println(color.Green + "End" + color.Reset)
 }
